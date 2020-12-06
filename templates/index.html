@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
     <title>Spotify Weather App</title>
-    
+
     <head>
         <h1>Spotify Weather App</h1>
         <h5>Enter your city and generate a playlist based on the current weather!</h5>
     </head>
 
     <body>
-
+        <form action="/weather.py">
+            <label for="city">City:</label>
+            <input type="text" id="city">
+            <input type="submit" value="Generate Playlist!">
+        </form>
     </body>
 </html>
