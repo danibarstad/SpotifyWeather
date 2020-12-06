@@ -1,9 +1,14 @@
 import os
 import requests
+import cgi
 
 key = os.environ.get('WEATHER_KEY')
+form = cgi.FieldStorage()
+city =  form.getvalue('searchbox')
 
-def get_weather(city):
+get_weather()
+
+def get_weather():
     query = {'q': city + ',US', 'units': 'imperial', 'appid': key}
     url = 'api.openweathermap.org/data/2.5/weather'
     try:
