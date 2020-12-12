@@ -23,3 +23,8 @@ def get_weather():
     cloudy = weather['clouds']['all']
     humidity = weather['main']['humidity']
     description = description.capitalize()
+
+
+
+
+    4c6a7c501ad077318a7c705eea755377

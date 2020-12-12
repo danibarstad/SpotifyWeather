@@ -8,9 +8,9 @@
     </head>
 
     <body>
-        <form action="/weather.py" method="GET">
+        <form action="weather.js" method="GET">
             <label for="city">City:</label>
-            <input type="text" id="city"><br>
+            <input type="text" id="city" name="city"><br>
             <label for="state">State:</label>
             <select id="state" name="state">
                 <option value="AL">Alabama</option>
@@ -65,7 +65,7 @@
                 <option value="WI">Wisconsin</option>"
                 <option value="WY">Wyoming</option>
             </select><br>
-            <input type="submit" value="Generate Playlist!">
+            <input type="button" id="submit" onclick="weather.js" value="Generate Playlist!">
         </form>
 
         <script src="https://sdk.scdn.co/spotify-player.js"></script>
