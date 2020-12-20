@@ -3,7 +3,7 @@ var input;
 
 var api = 'api.openweathermap.org/data/2.5/weather?';
 var unit = '&units=imperial'
-var key = '&apiid=4c6a7c501ad077318a7c705eea755377'
+var key = '&apiid='
 
 function setup() {
     var button = select('#submit');
