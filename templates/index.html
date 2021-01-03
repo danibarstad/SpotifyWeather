@@ -8,12 +8,7 @@
     </head>
 
     <body>
-        <div class="get-weather">
-            <input type="text" class="city" placeholder="Enter City"></input>
-            <!-- <input type="text" id="state" placeholder="Enter State Code"></input>   -->
-        </div>
-        <script src="weather.js"></script>
-        <!-- <form action="weather.js" id="userForm" method="GET">
+        <form action="weather.js" id="userForm" method="GET">
             <label for="city">City:</label>
             <input type="text" id="city" name="city"><br>
             <label for="state">State:</label>
@@ -70,40 +65,7 @@
                 <option value="WI">Wisconsin</option>"
                 <option value="WY">Wyoming</option>
             </select><br>
-            <input type="button" id="submit" onclick="weather.js" value="Generate Playlist!">
-        </form> -->
-
-        <script src="https://sdk.scdn.co/spotify-player.js"></script>
-        <script>
-            window.onSpotifyWebPlaybackSDKReady = () => {
-            const token = 'BQBQmRfNqkDTJMLgMirN2bWA_ZaXr26QCZP0MfLIT1fnDkgLorSpAEGiYQU2QTu55UqjwdSFbD3aSYoseRYlR37_tUNBcxRMdBiyg1siSptFS-eUJtOZqBOgkRrz1q14WybEfeVddcAyULwrrRBfIjMsUvi-3qXpYJY';
-            const player = new Spotify.Player({
-                name: 'Web Playback SDK Quick Start Player',
-                getOAuthToken: cb => { cb(token); }
-            });
-
-            // Error handling
-            player.addListener('initialization_error', ({ message }) => { console.error(message); });
-            player.addListener('authentication_error', ({ message }) => { console.error(message); });
-            player.addListener('account_error', ({ message }) => { console.error(message); });
-            player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-            // Playback status updates
-            player.addListener('player_state_changed', state => { console.log(state); });
-
-            // Ready
-            player.addListener('ready', ({ device_id }) => {
-                console.log('Ready with Device ID', device_id);
-            });
-
-            // Not Ready
-            player.addListener('not_ready', ({ device_id }) => {
-                console.log('Device ID has gone offline', device_id);
-            });
-
-            // Connect to the player!
-            player.connect();
-            };
-        </script>
+            <input type="button" id="submit" onclick="getWeather()" value="Generate Playlist!">
+        </form>
     </body>
 </html>
