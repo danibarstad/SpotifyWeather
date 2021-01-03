@@ -8,7 +8,14 @@
     </head>
 
     <body>
-        <form action="weather.js" id="userForm" method="GET">
+        <form method='GET' action="{% url 'playlist' %}">
+            {{ new_weather_form }}
+            <button type='submit'>Generate Playlist!</button>
+        </form>
+
+
+
+        <!-- <form action="weather.js" id="userForm" method="GET">
             <label for="city">City:</label>
             <input type="text" id="city" name="city"><br>
             <label for="state">State:</label>
@@ -65,7 +72,7 @@
                 <option value="WI">Wisconsin</option>"
                 <option value="WY">Wyoming</option>
             </select><br>
-            <input type="button" id="submit" onclick="getWeather()" value="Generate Playlist!">
-        </form>
+            <input type="button" id="submit" value="Generate Playlist!">
+        </form> -->
     </body>
 </html>

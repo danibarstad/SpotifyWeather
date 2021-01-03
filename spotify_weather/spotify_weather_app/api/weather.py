@@ -18,4 +18,5 @@ def get_weather(city, state):
     humidity = weather['main']['humidity']
     description = description.capitalize()
 
-    return description, temperature, cloudy, humidity
+    # return description, temperature, cloudy, humidity
+    return description
