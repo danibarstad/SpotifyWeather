@@ -8,7 +8,11 @@
     "dotenv": "^8.2.0",
     "requirejs": "^2.3.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babelify": "^10.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
