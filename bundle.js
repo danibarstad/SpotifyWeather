@@ -838,7 +838,7 @@ module.exports.parse = parse
 }).call(this)}).call(this,require('_process'))
 },{"_process":3,"fs":1,"path":2}],5:[function(require,module,exports){
 (function (process){(function (){
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 
 var button = document.querySelector('#submit');
 var city = document.querySelector('#city');
