@@ -1,4 +1,4 @@
-require('dotenv').config({path: '/.env'});
+require('dotenv').config();
 // const dotenv = require('dotenv');
 // dotenv.config({path: '/.env'});
 
@@ -8,10 +8,11 @@ var state = document.querySelector('#state');
 var namee = document.querySelector('.name');
 var desc = document.querySelector('.desc');
 var temp = document.querySelector('.temp');
-let apiKey = process.env.WEATHER_KEY;
+const apiKey = process.env.WEATHER_KEY;
+const api_url = 'https://api.openweathermap.org/data/2.5/weather'
 
 button.addEventListener('click',function(){
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value},${state.value}
+    fetch(`${api_url}?q=${city.value},${state.value}
     ,US&units=imperial&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => {
@@ -26,4 +27,3 @@ button.addEventListener('click',function(){
 
     .catch(err => alert('Wrong city name!'))
 })
-
