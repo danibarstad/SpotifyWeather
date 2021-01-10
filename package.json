@@ -2,11 +2,11 @@
   "name": "spotify",
   "version": "1.0.0",
   "description": "",
-  "main": "weather.js",
+  "main": "server.js",
   "dependencies": {
-    "browserify": "^17.0.0",
     "dotenv": "^8.2.0",
-    "requirejs": "^2.3.6"
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
