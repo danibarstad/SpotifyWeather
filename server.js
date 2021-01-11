@@ -30,3 +30,19 @@ require('dotenv').config();
 const app = express();
 app.listen(3000, () => console.log('listening at 3000'))
 app.use(express.static('public'));
+
+app.get('/weather/', async (request, response) => {
+    const api_key = process.env.WEATHER_KEY;
+    const city = 'GET CITY NAME HERE';
+    const state = 'GET STATE NAME HERE';
+    const url = 'https://api.openweathermap.org/data/2.5/weather';
+    const api_url = `${url}?q=${city},${state},US&units=imperial&appid=${api_key}`;
+
+    const api_response = await fetch(api_url);
+    const api_data = await api_response.json();
+
+    const data = {
+        // PUT DATA HERE
+    };
+    response.json(data);
+});
