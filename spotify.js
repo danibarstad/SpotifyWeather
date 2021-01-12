@@ -1,8 +1,16 @@
-app.get('/login', function(req, res) {
-    var scopes = 'user-read-private user-read-email';
-    res.redirect('https://accounts.spotify.com/authorize' +
-    '?response_type=code' +
-    '&client_id' + my_client_id +
-    (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-    '&redirect_uri=' + encodeURIComponent(redirect_uri));
-})
+const SpotifyStrategy = require('passport-spotify').Strategy;
+
+passport.use(
+    new SpotifyStrategy(
+        {
+            clientID: process.env.SPOTIFY_KEY,
+            clientSecret: process.env.SPOTIFY_SECRET,
+            callbackURL: process.env.SPOTIFY_REDIRECT
+        },
+        function(accessToken, refreshToken, expires_in, profile, done) {
+            User.findOrCreate({ spotifyID: profile.id }, function(err, user) {
+                return done(err, user);
+            });
+        }
+    )
+);
