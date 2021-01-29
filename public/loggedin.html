@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css">
-        <title>Spotify Weather App</title>
-        <header>
-            <h1>Welcome to [SPOTIFY WEATHER APP]</h1>
-            <p>Enter your city and generate a playlist based on the current weather!</p>
-        </header>
-    </head>
+<html lang="en">
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spotify Weather</title>
+</head>
+
+<body>
+    <main>
+
+        <header id="header">
+            <h1>Welcome to [Spotify Weather]</h1>
+            <p>Generate a Spotify playlist based on the current weather.</p>
+        </header>
+
         <div class="container">
-            <form action="weather.js" id="userForm" method="GET">
-                <div class="inputs">
+            <div class="inputs">
+                <form action="weather.js">
                     <label for="city">
-                        <input type="text" id="city" name="city" placeholder="Enter your city">
-                    </label>
+                        <input id="city" type="text" placeholder="Enter city" required>
+                    </label><br>
                     <label for="state">
                         <select id="state">
                             <option value="" style="color:gray" disabled selected>Choose a state</option>
@@ -66,32 +69,37 @@
                             <option value="SD">South Dakota</option>
                             <option value="TN">Tennessee</option>
                             <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
+                            <option value="UT">Utah</option>T
+                            <option value="VT">Vermont</option>"
                             <option value="VA">Virginia</option>
                             <option value="WA">Washington</option>
                             <option value="WV">West Virginia</option>
                             <option value="WI">Wisconsin</option>"
                             <option value="WY">Wyoming</option>
                         </select>
-                    </label>
-                    <button id="submit">Generate Playlist!</button>
-                </div>
-            </form>
+                    </label><br>
+                    <button type="submit">Generate Playlist</button>
+                </form>
+            </div>
         </div>
 
+        <footer id="footer">
+            created by <a target="_blank" href="https://danibarstad.com/">daniBarstad</a> | <a target="_blank" href="https://github.com/danibarstad/SpotifyWeather">GitHub</a>
+        </footer>
 
-        <!-- <div class="input">
-            <input type="text" class="inputValue">
-            <input type="submit" value="Submit" class="button">
-        </div> -->
+    </main>
 
-        <div class="display">
-             <h1 class="name"></h1>
-             <p class="desc"></p>
-             <p class="temp"></p>
-        </div>
+    <!-- <div class="input">
+    <input type="text" class="inputValue">
+    <input type="submit" value="Submit" class="button">
+    </div> -->
 
-        <script src="weather.js"></script>
-    </body>
+    <div class="display">
+        <h1 class="name"></h1>
+        <p class="desc"></p>
+        <p class="temp"></p>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
 </html>

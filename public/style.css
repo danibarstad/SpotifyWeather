@@ -1,63 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
-head {
-    position: relative;
-    font-family: 'Julius Sans One' sans-serif;
+body {
+    display: flex;
+    background-color: #ecf0f3;
+    text-align: center;
+    font-family: Julius Sans One;
+    justify-content: center;
 }
 
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #ecf0f3;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    place-items: center;
-    overflow: hidden;
-    font-family: Julius Sans One;
+#header {
+    margin-top: 100px;
 }
 
 .container {
-    margin: 10px;
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 20px;
+    height: 200px;
+    /* border: solid 1px black; */
+    border-radius: 14px;
     padding: 20px;
-    /* box-sizing: border-box; */
-    background: #ecf0f3;
+    margin: auto;
+}
+
+#footer {
+
 }
 
 .inputs {
-    margin-top: 40%;
+
 }
+
+/* @media (max-width: 275px) {
+    input, select, button {
+        width: 100%;
+    }
+} */
 
 input, select, button{
     margin: 3px;
-    display: block;
-    width: 75%;
-    border-radius: 7px;
     padding: 0;
-    /* border: ; */
-    outline: none;
-    box-sizing: border-box;
+    width: 275px;
+    height: 30px;
+    border: none;
+    border-radius: 14px;
 }
 
-input {
-    /* background: #ecf0f3; */
-    padding: 10px;
+input, select {
     padding-left: 5px;
-    height: 15px;
 }
 
-button{
+button {
+    font-size: 16px;
     background: #f9f7f1;
     cursor: pointer;
-
+    background-color: rgb(255, 170, 153);
 }
 
 button:hover {
+    background-color: rgb(255, 127, 100);
+}
 
+a, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    color: rgb(255, 127, 100);
 }
