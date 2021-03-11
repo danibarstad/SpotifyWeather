@@ -1,12 +1,12 @@
-let button = document.querySelector('#submit');
-let city = document.querySelector('#city');
-let state = document.querySelector('#state');
+let button = document.getElementById('submit');
+// let city;
+// let state;
 let namee = document.querySelector('.name');
 let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
 const apiKey = '4c6a7c501ad077318a7c705eea755377';  // Regenerate when ready to deploy
 const api_url = 'https://api.openweathermap.org/data/2.5/weather'
-let container;
+let text_container;
 
 // button.addEventListener('click',function(){
 //     fetch(`${api_url}?q=${city.value},${state.value}
@@ -29,7 +29,14 @@ let container;
 //     .catch(err => alert('Wrong city name!'))
 // })
 
-button.addEventListener('click', getData);
+button.addEventListener('click', printStuff);
+
+function printStuff() {
+    let city = document.querySelector('#city').value;
+    let state = document.getElementById('state').value;
+    console.log(city);
+    console.log(state);
+}
 
 function getData() {
     fetch(`${api_url}?q=${city.value},${state.value},US&units=imperial&appid=${apiKey}`)
@@ -59,7 +66,7 @@ function getData() {
             t.setAttribute('id', 'temp');
             t.textContent = data.main.temp;
 
-            container.appendChild(card);
+            test_container.appendChild(card);
             card.appendChild(m);
             card.appendChild(d);
             card.appendChild(t);
