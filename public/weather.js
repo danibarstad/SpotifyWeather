@@ -1,9 +1,9 @@
-var button = document.querySelector('#submit');
-var city = document.querySelector('#city');
-var state = document.querySelector('#state');
-var namee = document.querySelector('.name');
-var desc = document.querySelector('.desc');
-var temp = document.querySelector('.temp');
+let button = document.querySelector('#submit');
+let city = document.querySelector('#city');
+let state = document.querySelector('#state');
+let namee = document.querySelector('.name');
+let desc = document.querySelector('.desc');
+let temp = document.querySelector('.temp');
 const apiKey = '4c6a7c501ad077318a7c705eea755377';  // Regenerate when ready to deploy
 const api_url = 'https://api.openweathermap.org/data/2.5/weather'
 let container;
@@ -38,6 +38,7 @@ function getData() {
         })
         .then(function (data) {
             appendData(data);
+            console.log(data);
         })
         .catch(function (err) {
             console.log('error: ' + err);
@@ -62,7 +63,7 @@ function getData() {
             card.appendChild(m);
             card.appendChild(d);
             card.appendChild(t);
-            
+
             console.log(m);
             console.log(d);
             console.log(t);
