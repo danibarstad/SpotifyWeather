@@ -13,6 +13,9 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 200px;
     /* border: solid 1px black; */
     border-radius: 14px;
@@ -20,12 +23,23 @@ body {
     margin: auto;
 }
 
-#footer {
-
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.inputs {
+.display {
+    margin: 1.5rem 0;
+    border: solid 1px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#footer {
+    
 }
 
 /* @media (max-width: 275px) {
