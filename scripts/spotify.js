@@ -11,7 +11,8 @@ let redirectUri = 'http://localhost:5500';
 let scopes = 'user-read-private';
 
 // button.addEventListener('click', printInput);
-button.addEventListener('click', displayInput);
+// button.addEventListener('click', displayInput);
+button.addEventListener('click', getAccess);
 
 function printInput() {
     console.log(userId);
@@ -46,5 +47,11 @@ function displayData(data) {
 function getAccess() {
     let responseType = 'code';
     let url = `https://accounts.spotify.com/authorize?response_type=${responseType}&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}`;
-
+    fetch(url)
+        .then(function(response) {
+            return response;
+        })
+        .then(function(data) {
+            console.log(data);
+        });
 }
