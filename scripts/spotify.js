@@ -5,14 +5,15 @@ let secret_html = document.getElementById('secret-html');
 
 let userId = document.getElementById('user-id').value;
 
-let clientId = document.getElementById('id').value;
+let clientId = document.getElementById('cli-id').value;
 let clientSecret = document.getElementById('secret').value;
-let redirectUri = 'http://localhost:5500';
+let redirectUri = 'http://localhost:5501/public/loggedin.html';
 let scopes = 'user-read-private';
 
-// button.addEventListener('click', printInput);
+button.addEventListener('click', printInput);
 // button.addEventListener('click', displayInput);
 button.addEventListener('click', getAccess);
+// button.addEventListener('click', getData);
 
 function printInput() {
     console.log(userId);
@@ -27,7 +28,7 @@ function displayInput() {
 }
 
 function getData() {
-    fetch(`https://api.spotify.com/v1/me`)
+    fetch('https://api.spotify.com/v1/me')
         .then(function(response) {
             return response.json();
         })
@@ -45,13 +46,14 @@ function displayData(data) {
 }
 
 function getAccess() {
-    let responseType = 'code';
+    let responseType = 'token';
     let url = `https://accounts.spotify.com/authorize?response_type=${responseType}&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}`;
-    fetch(url)
-        .then(function(response) {
-            return response;
-        })
-        .then(function(data) {
-            console.log(data);
-        });
+    // fetch(url)
+    //     .then(function(response) {
+    //         return response;
+    //     })
+    //     .then(function(data) {
+    //         console.log(data);
+    //     });
+    window.location = url;
 }
