@@ -10,7 +10,10 @@ let product = document.getElementById('product');
 
 // button.addEventListener('click', printInput);
 // button.addEventListener('click', displayInput);
-login_btn.addEventListener('click', getAccess);
+login_btn.addEventListener('click', () => {
+    access_token = getAccess();
+    getData(access_token);
+});
 login_btn.addEventListener('click', getData);
 
 function printInput() {
@@ -21,13 +24,19 @@ function displayInput() {
 
 }
 
-function getData() {
-    fetch('https://api.spotify.com/v1/me')
+function getData(access_token) {
+    fetch('https://api.spotify.com/v1/me', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${access_token}`
+        }
+    })
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
-            displayData(data);
+            console.log(data);
+            // displayData(data);
         });
 }
 
@@ -40,4 +49,15 @@ function getAccess() {
     const CLIENT_ID_TEMP /*= {ADD CLIENT ID HERE} */;
     let url = `https://accounts.spotify.com/authorize?response_type=${responseType}&client_id=${CLIENT_ID_TEMP}&scope=${scopes}&redirect_uri=${redirectUri}`;
     window.location = url;
+    return getHashParams();
+}
+
+function getHashParams() {
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    while ( e = r.exec(q)) {
+        hashParams[e[1]] = decodeURIComponent(e[2]);
+    }
+    return hashParams.access_token;
 }
