@@ -1,6 +1,6 @@
 let login_btn = document.getElementById('login');
 let redirectUri = 'http://localhost:5501/public/loggedin.html';
-let scopes = 'user-read-private';
+let scopes = 'user-read-private playlist-read-private';
 
 if (login_btn) {
     login_btn.addEventListener('click', () => {
@@ -31,6 +31,17 @@ function getAccess() {
     let url = `https://accounts.spotify.com/authorize?response_type=${responseType}&client_id=${CLIENT_ID}&scope=${scopes}&redirect_uri=${redirectUri}`;
     window.location = url;
     return getHashParams();
+}
+
+function getPlaylist() {
+    let searchResults = spotify.search(q=query, limit=50, type='playlist');
+
+    let playlist = random.choice(searchResults['playlists']['items']);
+    let playlistURIs = [];
+
+    playlistURIs.push(playlist['uri']);
+    
+    return playlistURIs[0];
 }
 
 function getHashParams() {
