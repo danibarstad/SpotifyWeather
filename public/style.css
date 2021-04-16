@@ -17,8 +17,6 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 200px;
-    /* border: solid 1px black; */
-    border-radius: 14px;
     padding: 20px;
     margin: auto;
 }
@@ -27,6 +25,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#city:focus,
+#state:focus,
+.btn:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 1px #fff,
+        0 0 0 3px rgb(255, 127, 100);
 }
 
 .display {
