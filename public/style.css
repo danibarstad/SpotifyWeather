@@ -56,10 +56,10 @@ body {
 } */
 
 input, select, button{
-    margin: 3px;
+    margin: 5px;
     padding: 0;
     width: 275px;
-    height: 30px;
+    height: 35px;
     border: none;
     border-radius: 14px;
 }
@@ -87,4 +87,24 @@ a, a:visited {
 a:hover {
     font-weight: bold;
     color: rgb(255, 127, 100);
+}
+
+#state {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#state::after {
+    content: '\f078';
+    font: normal normal normal 17px/1 FontAwesome;
+    color: #0ebeff;
+    right: 11px;
+    top: 6px;
+    height: 34px;
+    padding: 15px 0px 0px 8px;
+    border-left: 1px solid #0ebeff;
+    position: absolute;
+    pointer-events: none;
 }
